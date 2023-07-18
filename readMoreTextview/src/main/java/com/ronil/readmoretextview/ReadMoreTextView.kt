@@ -227,7 +227,6 @@ class ReadMoreTextView @JvmOverloads constructor(context: Context, attrs: Attrib
             e.printStackTrace()
         }
     }
-
     companion object {
         private const val TRIM_MODE_LINES = 0
         private const val TRIM_MODE_LENGTH = 1

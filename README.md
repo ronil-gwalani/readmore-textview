@@ -15,13 +15,13 @@ allprojects {
 
  ```gradel
 dependencies {
-     implementation 'com.github.ronil-gwalani:readmore-textview:VersionName' // here VersionName = v1.0.1
+     implementation 'com.github.ronil-gwalani:readmore-textview:VersionName' // here VersionName = v1.0.2
 	}
   ```
   
    > Step 3 Implement the Readmore image view in your Layout xml file like this
   ``` 
-  <com.colormoon.readmoretextview.ReadMoreTextView
+  <com.ronil.readmoretextview.ReadMoreTextView
         android:layout_width="match_parent"
         android:id="@+id/readmoreTv"
         android:textColor="@color/black"

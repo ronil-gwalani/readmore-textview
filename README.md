@@ -31,7 +31,7 @@ allprojects {
 
  ```gradel
 dependencies {
-     implementation 'com.github.ronil-gwalani:readmore-textview:VersionName' // here VersionName = v1.0.3
+     implementation 'com.github.ronil-gwalani:readmore-textview:VersionName' // here VersionName = v1.0.4
 	}
   ```
   

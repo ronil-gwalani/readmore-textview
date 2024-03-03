@@ -1,5 +1,21 @@
-# Readmore-Textview
-this is the library for the readmore textview.
+
+
+
+# ReadMoreTextView Library for Android
+
+**Features**
+
+
+ReadMoreTextView is an Android library that provides a convenient way to implement a "Read More / Read Less" functionality within TextViews. This library is particularly useful when dealing with long text content in limited space, commonly encountered in messaging applications such as WhatsApp.
+
+1. **Easily integrate "Read More / Read Less" functionality into TextViews.**
+ 
+2. **Seamlessly handle long text content by truncating and expanding text as needed.**
+
+3. **Customizable options for controlling the appearance and behavior of the "Read More / Read Less" functionality.** 
+
+4. **Lightweight and efficient implementation for smooth performance.** 
+
 
 >Step 1. Add the JitPack repository to your build file
 
@@ -15,7 +31,7 @@ allprojects {
 
  ```gradel
 dependencies {
-     implementation 'com.github.ronil-gwalani:readmore-textview:VersionName' // here VersionName = v1.0.2
+     implementation 'com.github.ronil-gwalani:readmore-textview:VersionName' // here VersionName = v1.0.3
 	}
   ```
   
@@ -57,3 +73,21 @@ dependencies {
    }
  }
 ```
+
+
+
+## Contributing
+
+Contributions to Readmore Textview Library are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
+
+## License
+
+ Readmore Textview Library is released under the **MIT License**. See the [LICENSE](https://en.wikipedia.org/wiki/MIT_License) file for more details.
+
+## Support
+
+For any questions or support related to Readmore Textview Library, you can reach out to us at ronilgwalani@gmail.com or join my community forum.
+
+## Credits
+
+The Readmore Textview Library is developed by [Ronil Gwalani](https://github.com/ronil-gwalani) feel free to contact in case of any query.

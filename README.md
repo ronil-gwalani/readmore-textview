@@ -73,3 +73,21 @@ dependencies {
    }
  }
 ```
+
+
+
+## Contributing
+
+Contributions to Readmore Textview Library are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
+
+## License
+
+ Readmore Textview Library is released under the **MIT License**. See the [LICENSE](https://en.wikipedia.org/wiki/MIT_License) file for more details.
+
+## Support
+
+For any questions or support related to Chatting Library, you can reach out to us at ronilgwalani@gmail.com or join my community forum.
+
+## Credits
+
+The Chatting Picker Library library was developed by [Ronil Gwalani](https://github.com/ronil-gwalani) feel free to contact in case of any query.

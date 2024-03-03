@@ -8,7 +8,6 @@ import android.text.TextPaint
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
 import android.view.ViewTreeObserver.OnGlobalLayoutListener
 import androidx.appcompat.widget.AppCompatTextView
@@ -20,6 +19,7 @@ class ReadMoreTextView @JvmOverloads constructor(context: Context, attrs: Attrib
     private var text: CharSequence? = null
     private var bufferType: BufferType? = null
     private var readMore = true
+    private var wantExpend = true
     private var trimLength: Int
     private var trimCollapsedText: CharSequence
     private var trimExpandedText: CharSequence
@@ -61,6 +61,15 @@ class ReadMoreTextView @JvmOverloads constructor(context: Context, attrs: Attrib
         setText()
     }
 
+    private var textViewClickListener: TextViewClickListener? = null
+    fun setOnTextViewClickListener(listener: TextViewClickListener) {
+        textViewClickListener = listener
+    }
+
+    fun wantExpend(value: Boolean) {
+        this.wantExpend = value
+    }
+
     private fun setText() {
         super.setText(displayableText, bufferType)
         movementMethod = LinkMovementMethod.getInstance()
@@ -91,7 +100,6 @@ class ReadMoreTextView @JvmOverloads constructor(context: Context, attrs: Attrib
                 if (readMore) {
                     if (layout.lineCount > trimLines) {
                         lessTextColor?.let {
-                            Log.e("getTrimmedText", ": $it   ${R.color.show_less}")
                             setColorClickableText(it)
                         }
                         return updateCollapsedText()
@@ -160,20 +168,20 @@ class ReadMoreTextView @JvmOverloads constructor(context: Context, attrs: Attrib
         }
     }
 
-    fun setExpandedTextColor(moreTextColor: Int) {
-        this.moreTextColor = moreTextColor
+    fun setExpandedTextColor(value: Int) {
+        this.lessTextColor = value
     }
 
-    fun setCollapsedTextColor(lessTextColor: Int) {
-        this.lessTextColor = lessTextColor
+    fun setCollapsedTextColor(value: Int) {
+        this.moreTextColor = value
     }
 
-    fun setCollapsedText(trimCollapsedText: CharSequence) {
-        this.trimCollapsedText = trimCollapsedText
+    fun setCollapsedText(value: CharSequence) {
+        this.trimExpandedText = value
     }
 
-    fun setExpandedText(trimExpandedText: CharSequence) {
-        this.trimExpandedText = trimExpandedText
+    fun setExpandedText(value: CharSequence) {
+        this.trimCollapsedText = value
     }
 
     fun setTrimMode(trimMode: Int) {
@@ -186,8 +194,16 @@ class ReadMoreTextView @JvmOverloads constructor(context: Context, attrs: Attrib
 
     private inner class ReadMoreClickableSpan : ClickableSpan() {
         override fun onClick(widget: View) {
-            readMore = !readMore
-            setText()
+            if (readMore) {
+                textViewClickListener?.onReadMoreClick()
+            } else {
+                textViewClickListener?.onReadLessClick()
+            }
+            if (wantExpend) {
+                readMore = !readMore
+                setText()
+            }
+
         }
 
         override fun updateDrawState(ds: TextPaint) {
@@ -227,11 +243,12 @@ class ReadMoreTextView @JvmOverloads constructor(context: Context, attrs: Attrib
             e.printStackTrace()
         }
     }
+
     companion object {
         private const val TRIM_MODE_LINES = 0
         private const val TRIM_MODE_LENGTH = 1
         private const val DEFAULT_TRIM_LENGTH = 240
-        private const val DEFAULT_TRIM_LINES = 2
+        private const val DEFAULT_TRIM_LINES = 5
         private const val INVALID_END_INDEX = -1
         private const val DEFAULT_SHOW_TRIM_EXPANDED_TEXT = true
         private const val ELLIPSIZE = "... "

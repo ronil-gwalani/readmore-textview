@@ -1,5 +1,6 @@
 package com.ronil.readmoretextview
 
 interface TextViewClickListener {
-   fun delegate(expended:Boolean)
+   fun onReadMoreClick()
+   fun onReadLessClick()
 }

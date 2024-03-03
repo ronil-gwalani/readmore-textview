@@ -86,7 +86,7 @@ Contributions to Readmore Textview Library are welcome! If you find any issues o
 
 ## Support
 
-For any questions or support related to Chatting Library, you can reach out to us at ronilgwalani@gmail.com or join my community forum.
+For any questions or support related to Readmore Textview Library, you can reach out to us at ronilgwalani@gmail.com or join my community forum.
 
 ## Credits
 

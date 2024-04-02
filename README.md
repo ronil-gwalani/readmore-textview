@@ -17,6 +17,9 @@ ReadMoreTextView is an Android library that provides a convenient way to impleme
 4. **Lightweight and efficient implementation for smooth performance.** 
 
 
+## for video tutorial checkout this video on youtube [https://youtu.be/Zrpu-j9NGLM](https://youtu.be/gBfs9c7VNKw?si=_I3My8NhCAu4DhV1)
+
+
 >Step 1. Add the JitPack repository to your build file
 
 ```gradel
